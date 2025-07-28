@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneNote AI助理</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部标题 -->
+        <header class="header">
+            <div class="header-content">
+                <i class="fas fa-book-open"></i>
+                <h1 data-i18n="title">OneNote AI助理</h1>
+                <p data-i18n="subtitle">专业解决OneNote使用问题</p>
+            </div>
+            <!-- 语言切换按钮 -->
+            <div class="language-switch">
+                <button id="languageToggle" class="language-btn">
+                    <i class="fas fa-globe"></i>
+                    <span id="languageText">EN</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- 头像区域 -->
+            <div class="avatar-section">
+                <div class="avatar-container">
+                    <img src="onenote.jpg" alt="AI助理头像" class="avatar-image" id="avatarImage">
+                    <div class="avatar-status" id="avatarStatus">
+                        <i class="fas fa-circle" style="color: #f59e0b;"></i>
+                        <span data-i18n="checking-status">检查状态中...</span>
+                    </div>
+                </div>
+                <div class="avatar-info">
+                    <h2 data-i18n="expert-title">OneNote专家</h2>
+                    <p data-i18n="expert-desc">我是您的专属OneNote技术支持助理，随时为您解决使用中遇到的问题！</p>
+                </div>
+            </div>
+
+            <!-- 聊天区域 -->
+            <div class="chat-section">
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- 消息将通过JavaScript动态添加 -->
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <div class="input-group">
+                            <input type="text" id="messageInput" data-i18n-placeholder="input-placeholder" placeholder="请描述您的OneNote问题..." maxlength="500">
+                            <div class="input-buttons">
+                                <button id="imageButton" class="image-btn" data-i18n-title="upload-image-title" title="上传图片/粘贴截图" aria-label="上传图片">
+                                    <i class="fas fa-image"></i>
+                                </button>
+                                <button id="sendButton" class="send-btn" data-i18n-title="send-message-title" title="发送消息" aria-label="发送消息">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                            <input type="file" id="fileInput" accept="image/*" class="hidden-input" aria-label="选择图片文件">
+                        </div>
+                        
+                        <!-- 图片预览区域 -->
+                        <div class="image-preview-container hidden" id="imagePreviewContainer">
+                            <div class="image-preview">
+                                <img id="previewImage" src="" alt="预览图片">
+                                <button class="remove-image-btn" id="removeImageBtn" data-i18n-title="remove-image-title" title="移除图片">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="image-info">
+                                <span id="imageInfo" data-i18n="image-ready">图片已准备就绪，描述问题后发送</span>
+                            </div>
+                        </div>
+                        <div class="input-suggestions">
+                            <span class="suggestion" data-i18n="suggestion-sync" data-text="OneNote同步很慢怎么办？">同步问题</span>
+                            <span class="suggestion" data-i18n="suggestion-loading" data-text="OneNote页面加载不出来">加载问题</span>
+                            <span class="suggestion" data-i18n="suggestion-search" data-text="OneNote搜索功能不好用">搜索问题</span>
+                            <span class="suggestion" data-i18n="suggestion-print" data-text="OneNote打印格式乱了">打印问题</span>
+                            <span class="suggestion" data-i18n="suggestion-performance" data-text="OneNote运行很卡">性能问题</span>
+                            <span class="suggestion" data-i18n="suggestion-account" data-text="OneNote无法登录账户">账户问题</span>
+                            <span class="suggestion" data-i18n="suggestion-mobile" data-text="手机OneNote不同步">移动端问题</span>
+                            <span class="suggestion" data-i18n="suggestion-handwriting" data-text="OneNote手写笔不灵敏">手写问题</span>
+                            <span class="suggestion" data-i18n="suggestion-backup" data-text="OneNote笔记误删如何恢复">数据恢复</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 侧边栏 - 快速帮助 -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <h3><i class="fas fa-lightbulb"></i> <span data-i18n="quick-help">快速帮助</span></h3>
+                <div class="help-items">
+                    <div class="help-item" data-topic="sync">
+                        <i class="fas fa-sync-alt"></i>
+                        <span data-i18n="help-sync">同步问题</span>
+                    </div>
+                    <div class="help-item" data-topic="performance">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span data-i18n="help-performance">性能优化</span>
+                    </div>
+                    <div class="help-item" data-topic="search">
+                        <i class="fas fa-search"></i>
+                        <span data-i18n="help-search">搜索功能</span>
+                    </div>
+                    <div class="help-item" data-topic="print">
+                        <i class="fas fa-print"></i>
+                        <span data-i18n="help-print">打印设置</span>
+                    </div>
+                    <div class="help-item" data-topic="account">
+                        <i class="fas fa-user-shield"></i>
+                        <span data-i18n="help-account">账户权限</span>
+                    </div>
+                    <div class="help-item" data-topic="mobile">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span data-i18n="help-mobile">移动端问题</span>
+                    </div>
+                    <div class="help-item" data-topic="handwriting">
+                        <i class="fas fa-pen"></i>
+                        <span data-i18n="help-handwriting">手写绘图</span>
+                    </div>
+                    <div class="help-item" data-topic="backup">
+                        <i class="fas fa-save"></i>
+                        <span data-i18n="help-backup">数据恢复</span>
+                    </div>
+                </div>
+                
+                <div class="knowledge-base">
+                    <h4><i class="fas fa-book"></i> <span data-i18n="knowledge-base">知识库</span></h4>
+                    <ul id="knowledgeList">
+                        <li data-i18n="loading">正在加载...</li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- 加载指示器 -->
+    <div class="loading-indicator" id="loadingIndicator">
+        <div class="spinner"></div>
+        <span data-i18n="ai-thinking">AI助理正在思考...</span>
+    </div>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

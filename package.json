@@ -1,0 +1,50 @@
+{
+  "name": "onenote-ai-assistant",
+  "version": "1.0.0",
+  "description": "Professional AI-powered digital assistant for Microsoft OneNote troubleshooting with dual language support",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test-config": "node -e \"console.log('Testing configuration...'); require('dotenv').config(); console.log('DEEPSEEK_API_KEY:', process.env.DEEPSEEK_API_KEY ? 'Configured' : 'Missing'); console.log('DASHSCOPE_API_KEY:', process.env.DASHSCOPE_API_KEY ? 'Configured' : 'Missing');\""
+  },
+  "keywords": [
+    "onenote",
+    "ai-assistant",
+    "troubleshooting",
+    "microsoft",
+    "chatbot",
+    "deepseek",
+    "alibaba-cloud",
+    "image-analysis",
+    "internationalization",
+    "nodejs"
+  ],
+  "author": "OneNote AI Assistant Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/onenote-ai-assistant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/onenote-ai-assistant/issues"
+  },
+  "homepage": "https://github.com/yourusername/onenote-ai-assistant#readme",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "multer": "^1.4.5-lts.1",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "socket.io": "^4.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
