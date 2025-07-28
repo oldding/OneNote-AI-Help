@@ -50,7 +50,7 @@ Professional solutions for common OneNote issues:
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/onenote-ai-assistant.git
+git clone https://github.com/oldding/onenote-ai-assistant.git
 cd onenote-ai-assistant
 ```
 

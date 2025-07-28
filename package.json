@@ -26,12 +26,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/onenote-ai-assistant.git"
+    "url": "https://github.com/oldding/onenote-ai-assistant.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/onenote-ai-assistant/issues"
+    "url": "https://github.com/oldding/onenote-ai-assistant/issues"
   },
-  "homepage": "https://github.com/yourusername/onenote-ai-assistant#readme",
+  "homepage": "https://github.com/oldding/onenote-ai-assistant#readme",
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=8.0.0"
