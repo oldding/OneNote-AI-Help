@@ -1,8 +1,8 @@
-# 🤖 OneNote AI Assistant
+# 🤖 OneNote AI Help
 
 A professional AI-powered digital assistant specifically designed to solve Microsoft OneNote issues with dual language support (Chinese/English).
 
-![OneNote AI Assistant](onenote.jpg)
+![OneNote AI Help](onenote.jpg)
 
 ## ✨ Features
 

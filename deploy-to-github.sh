@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# OneNote AI Assistant - GitHub Deployment Script
-# This script helps you deploy your OneNote AI Assistant to GitHub
+# OneNote AI Help - GitHub Deployment Script
+# This script helps you deploy your OneNote AI Help to GitHub
 
-echo "🚀 OneNote AI Assistant - GitHub Deployment"
+echo "🚀 OneNote AI Help - GitHub Deployment"
 echo "==========================================="
 
 # Check if Git is installed
@@ -58,7 +58,7 @@ if [ -n "$(git status --porcelain)" ]; then
             echo "✅ Changes committed"
         else
             git add .
-            git commit -m "Update OneNote AI Assistant"
+            git commit -m "Update OneNote AI Help"
             echo "✅ Changes committed with default message"
         fi
     fi
@@ -69,7 +69,7 @@ echo "🚀 Pushing to GitHub..."
 if git push -u origin master 2>/dev/null || git push -u origin main 2>/dev/null; then
     echo "✅ Successfully pushed to GitHub!"
     echo ""
-    echo "🎉 Your OneNote AI Assistant is now on GitHub!"
+    echo "🎉 Your OneNote AI Help is now on GitHub!"
     echo "📖 You can view it at: $(git remote get-url origin | sed 's/\.git$//')"
     echo ""
     echo "📋 Next steps:"

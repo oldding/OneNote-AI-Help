@@ -975,8 +975,17 @@ app.post('/api/chat', async (req, res) => {
     // 检查API密钥配置
     if (hasDeepSeek || hasDashScope) {
       // 使用AI API回答
+      const useDeepSeek = process.env.AI_PROVIDER === 'deepseek' && hasDeepSeek;
       const enhancedMessage = hasImage ? `${message}\n\n本地图片分析: ${imageAnalysis}` : message;
       response = await callAI(enhancedMessage, searchResults, hasImage ? image : null, language);
+      
+      // DeepSeek 不支持图片输入，告知用户
+      if (hasImage && useDeepSeek) {
+        const note = language === 'en'
+          ? '\n\n> ⚠️ **Note**: The image was analyzed locally. DeepSeek does not support image input. To enable AI-powered image analysis, configure DashScope in your settings.'
+          : '\n\n> ⚠️ **提示**: 图片已通过本地规则分析。DeepSeek 不支持图片输入，如需 AI 图片分析请在设置中配置阿里云百炼。';
+        response += note;
+      }
     } else {
       // 使用本地知识库回答
       console.log('使用本地知识库回答（未配置API密钥）');
@@ -1003,6 +1012,8 @@ app.post('/api/chat', async (req, res) => {
         responseSource = '阿里云百炼 (图片理解)';
       } else if (process.env.AI_PROVIDER === 'dashscope' && hasDashScope) {
         responseSource = '阿里云百炼';
+      } else if (hasImage && hasDeepSeek && !hasDashScope) {
+        responseSource = 'DeepSeek (本地图片分析)';
       } else if (hasDeepSeek) {
         responseSource = 'DeepSeek';
       } else if (hasDashScope) {

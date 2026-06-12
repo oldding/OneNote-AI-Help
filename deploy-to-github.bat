@@ -1,7 +1,7 @@
 @echo off
-title OneNote AI Assistant - GitHub Deployment
+title OneNote AI Help - GitHub Deployment
 
-echo 🚀 OneNote AI Assistant - GitHub Deployment
+echo 🚀 OneNote AI Help - GitHub Deployment
 echo ===========================================
 echo.
 
@@ -57,7 +57,7 @@ if %errorlevel% equ 0 (
     
     if /i "!COMMIT_CHANGES!" equ "y" (
         set /p COMMIT_MSG="Enter commit message (or press Enter for default): "
-        if "!COMMIT_MSG!" equ "" set COMMIT_MSG=Update OneNote AI Assistant
+        if "!COMMIT_MSG!" equ "" set COMMIT_MSG=Update OneNote AI Help
         
         git add .
         git commit -m "!COMMIT_MSG!"
@@ -85,7 +85,7 @@ if %errorlevel% neq 0 (
 
 echo ✅ Successfully pushed to GitHub!
 echo.
-echo 🎉 Your OneNote AI Assistant is now on GitHub!
+echo 🎉 Your OneNote AI Help is now on GitHub!
 for /f "delims=" %%i in ('git remote get-url origin') do set REPO_URL=%%i
 echo 📖 You can view it at: %REPO_URL:.git=%
 echo.

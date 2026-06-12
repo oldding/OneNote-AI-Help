@@ -1,5 +1,5 @@
 @echo off
-echo 🚀 OneNote AI Assistant - GitHub Upload
+echo 🚀 OneNote AI Help - GitHub Upload
 echo =====================================
 echo.
 echo 请确保您已经在GitHub上创建了仓库：

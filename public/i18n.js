@@ -63,7 +63,7 @@ const translations = {
     },
     en: {
         // 页面标题和基本信息
-        'title': 'OneNote AI Assistant',
+        'title': 'OneNote AI Help',
         'subtitle': 'Professional OneNote Problem Solving',
         'status-online': 'Online',
         'checking-status': 'Checking status...',
