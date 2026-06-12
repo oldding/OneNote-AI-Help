@@ -30,7 +30,7 @@ if git remote get-url origin &> /dev/null; then
 else
     echo "⚠️  No remote origin configured"
     echo "Please create a new repository on GitHub and run:"
-    echo "git remote add origin https://github.com/yourusername/onenote-ai-assistant.git"
+    echo "git remote add origin https://github.com/yourusername/OneNote-AI-Help.git"
     echo ""
     read -p "Enter your GitHub repository URL: " REPO_URL
     

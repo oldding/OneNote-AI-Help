@@ -50,8 +50,8 @@ Professional solutions for common OneNote issues:
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/oldding/onenote-ai-assistant.git
-cd onenote-ai-assistant
+git clone https://github.com/oldding/OneNote-AI-Help.git
+cd OneNote-AI-Help
 ```
 
 2. **Install dependencies**
@@ -111,7 +111,7 @@ Open your browser and navigate to `http://localhost:3000`
 ## 📁 Project Structure
 
 ```
-onenote-ai-assistant/
+OneNote-AI-Help/
 ├── public/                 # Frontend files
 │   ├── index.html         # Main HTML page
 │   ├── styles.css         # Styling

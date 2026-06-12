@@ -33,7 +33,7 @@ if %errorlevel% equ 0 (
 ) else (
     echo ⚠️  No remote origin configured
     echo Please create a new repository on GitHub and enter the URL below:
-    echo Example: https://github.com/yourusername/onenote-ai-assistant.git
+    echo Example: https://github.com/yourusername/OneNote-AI-Help.git
     echo.
     set /p REPO_URL="Enter your GitHub repository URL: "
     
